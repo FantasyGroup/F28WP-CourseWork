@@ -52,11 +52,11 @@
         if(data.success){
             swal("Success", "You have signed in",'success');
         } else
-           swal ("Ooops...", " Please enter your correct username and password or sign up ",'error');
+           swal ("Ooops...", " Please enter your correct Username|Password or Sign Up ",'error');
     });
     socket.on('signUpResponse',function(data){
         if(data.success){
-            swal("Success", "You have signed up",'success');
+            swal("Success", "You have registered",'success');
         } else{
             swal("Ooops...", "Please enter your name and password to sign up",'error');
         }
