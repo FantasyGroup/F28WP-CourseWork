@@ -13,12 +13,14 @@ image.src = "Client/sprites/alienPink.png";
 var image2 = new Image();
 image2.src = "Client/sprites/alienGreen.png";
 
+//Souns for coin,jumping and character collision 
 var coin_sound=document.getElementById('coin_sound_effect');
 var jump_sound=document.getElementById('jump_sound_effect');
 var collision_sound=document.getElementById('collision_sound_effect');
 
-intro();
 
+intro();
+//Introduction of the Game Menu Design 
 function intro(){
    context.font = "35px Orbitron";
    context.fillStyle = "#FFFFFF";
@@ -46,7 +48,7 @@ function end_game()
     gameOver= true;
     timeReady = false;
     clearCanvas();
-    
+        
         if (coinCount_player1 > coinCount_player2) {
             swal("Congratulations Player 1, You Won! 🎉", " Your score is: " + coinCount_player1 + "!", "success")
         }
@@ -54,11 +56,12 @@ function end_game()
             swal("Congratulations Player 2, You Won! 🎉", " Your score is: " + coinCount_player2 + "!", "success")
         }        
         else{
-            swal("It was a DRAW", " Lets replay ⚔️!");
+            swal("It was a DRAW", " Let's replay ⚔️!");
         }
         timeReady = false;
         if(event.keyCode == 13)
         {
+	//Replays the game 
         replay();
         }
         
@@ -124,7 +127,7 @@ var player2 = {
 }
 
 
-  //we are calculating for collision
+  //Calculates the collision between the Aliens
 function getDistance(px,py,cx,cy)
 {
     let xDistance = cx-px;
@@ -150,7 +153,7 @@ function distance(p1x,p1y,p2x,p2y)
 }
 
 
-//coin
+//The chicken bucket (our coin of the game) 
 var show_coin = false;
 var coin_image = new Image();
 coin_image.onload = function ()
@@ -171,7 +174,7 @@ time_img.onload = function()
 } // Draw when image has loaded
 time_img.src = 'Client/images/time.gif';
 
-// Place the coin somewhere on the canvas randomly
+// Place the chicken bucket somewhere on the canvas randomly for the Aliens to collect 
 var reset = function ()
 {
     coin.x = 32 + (Math.random() * (canvas.width - 64));
@@ -209,7 +212,7 @@ var collisionCoin = function()
             coin_flag_2=false;
         }
     }
-//coin is colliding
+//Coin is colliding with the character 
 
 };
 
@@ -259,6 +262,7 @@ var collisionCharacter = function()
     
 };
 
+//Purple platforms for the Aliens to jump on 
 function draw_platforms()
 {
     context.fillStyle = "#4A0336";
@@ -295,13 +299,11 @@ var render = function()
    if(gameOver==true)
    {
        end_game();      
-        //context.font = "30px Impact";
-        //context.textAlign = "center";
-        // context.fillText("The game has ended", canvas.width/2, canvas.height/2);
+  
    }
  };
 
-//time
+//Timer
 var timeReady = false;
 var time =60;
 
@@ -350,13 +352,13 @@ function loop(){
     }
     /* Right Key */
     if(keys[39]){
-        if(player1.velX < player1.speed){  //Cant increase velocity if reached max speed
+        if(player1.velX < player1.speed){  //Can't increase velocity if reached max speed
             player1.velX++;
         }
     }
     /* Left Key */
     if(keys[37]){
-        if(player1.velX > -player1.speed){ //Cant increase velocity if reached max speed
+        if(player1.velX > -player1.speed){ //Can't increase velocity if reached max speed
             player1.velX--;
         }
     }
@@ -407,7 +409,7 @@ function loop(){
     }
     /* Right Key */
     if(keys[68]){                        //Press 'd' move right
-    if(player2.velX < player2.speed){    //Cant increase velocity if reached max speed
+    if(player2.velX < player2.speed){    //Can't increase velocity if reached max speed
         player2.velX++;
         }
 
@@ -415,7 +417,7 @@ function loop(){
     }
     /* Left Key */
     if(keys[65]){                        //Press 'a' to move left
-    if(player2.velX > -player2.speed){   //Cant increase velocity if reached max speed
+    if(player2.velX > -player2.speed){   //Can't increase velocity if reached max speed
         player2.velX--;
         }
     }
@@ -615,7 +617,7 @@ platforms.push({
      height: platform_height
  });
 
- //left Wall
+ //Left Wall
  platforms.push({
     x:-10,
     y:0,
