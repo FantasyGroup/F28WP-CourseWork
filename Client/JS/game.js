@@ -159,7 +159,7 @@ coin_image.onload = function ()
   show_coin = true;
 };
 
-coin_image.src = "Client/images/coin.png";
+coin_image.src = "Client/images/chicken.png";
 var coin = {};
 
 //clock
