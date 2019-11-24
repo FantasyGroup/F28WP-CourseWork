@@ -6,5 +6,5 @@ New users can either sign up to save their scores or play as a guest user.
 Existing users can sign-in to play the game and keep a record of their scores.
 
 ## INSTRUCTIONS:
-To move Pinky,use the arrow keys.\n
+To move Pinky,use the arrow keys./n
 To move Blu,use the keys A,W and D
