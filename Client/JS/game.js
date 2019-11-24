@@ -50,13 +50,19 @@ function end_game()
     clearCanvas();
         
         if (coinCount_player1 > coinCount_player2) {
-            swal("Congratulations Player 1, You Won! 🎉", " Your score is: " + coinCount_player1 + "!", "success")
+            swal("Congratulations Player 1, You Won! 🎉", " Your score is: " + coinCount_player1 + "!", "success", {
+                button: "Press Enter!",
+            });
         }
         else if (coinCount_player2 > coinCount_player1){
-            swal("Congratulations Player 2, You Won! 🎉", " Your score is: " + coinCount_player2 + "!", "success")
+            swal("Congratulations Player 2, You Won! 🎉", " Your score is: " + coinCount_player2 + "!", "success", {
+                button: "Press Enter!",
+            });
         }        
         else{
-            swal("It was a DRAW", " Let's replay ⚔️!");
+            swal("It was a DRAW", " Let's replay ⚔️!", {
+                button: "Press Enter!",
+            });
         }
         timeReady = false;
         if(event.keyCode == 13)
