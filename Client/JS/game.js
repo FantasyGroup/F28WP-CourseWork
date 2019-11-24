@@ -85,7 +85,7 @@ requestAnimationFrame(loop)
 
 //Player 1
 var player1 = {
-    x:  400,
+    x:  380,
     y: canvas.height -52,   // Positioned at bottom of screen
     width: 35,
     height: 47,
@@ -103,7 +103,7 @@ var player1 = {
 
 /* Player 2 */
 var player2 = {
-    x:  400,
+    x:  420,
     y: canvas.height -52,   // Positioned at bottom of screen
     width: 35,
     height: 47,
