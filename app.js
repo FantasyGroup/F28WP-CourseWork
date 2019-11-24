@@ -4,6 +4,8 @@ db.createCollection("account");
 db.createCollection("scores");
 */
 
+//Reference used from "https://scripterswar.com/tutorial/nodejs"
+
 var mongojs = require("mongojs");
 var db = mongojs('46.101.126.219:27017/myPlayers', ['account', 'scores']);
 
