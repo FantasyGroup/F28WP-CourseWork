@@ -63,14 +63,14 @@ function end_game()
 
 
 function replay(){
-player1.x = 10;
+player1.x = 380;
 player1.y = canvas.height -52;
 player1.grounded = true;
 player1.velY = 0;
 player1.velX = 0;
 coinCount_player1 = 0;
 
-player2.x = 100;
+player2.x = 420;
 player2.y = canvas.height -52;
 player2.grounded = true;
 player2.velY = 0;
