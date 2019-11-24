@@ -44,9 +44,9 @@ function end_game()
 {
       // Display game over message when timer is over
     gameOver= true;
+    timeReady = false;
     clearCanvas();
     
-
         if (coinCount_player1 > coinCount_player2) {
             swal("Congratulations Player 1, You Won! 🎉", " Your score is: " + coinCount_player1 + "!", "success")
         }
@@ -56,13 +56,17 @@ function end_game()
         else{
             swal("It was a DRAW", " Lets replay ⚔️!");
         }
-        
+        timeReady = false;
+        if(event.keyCode == 13)
+        {
         replay();
+        }
         
 }
 
 
 function replay(){
+timeReady = true;
 player1.x = 380;
 player1.y = canvas.height -52;
 player1.grounded = true;
