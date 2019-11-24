@@ -63,6 +63,13 @@ io.sockets.on('connection', function(socket){
         }
     });
 });
+    
+   io.on('connection',function (socket) {
+       console.log("User is connected");
+       socket.on('disconnect',function(event){
+           console.log("Disconnected");
+       })
+   });
 
 
 
